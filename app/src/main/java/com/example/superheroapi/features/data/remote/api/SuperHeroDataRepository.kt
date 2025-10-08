@@ -1,5 +1,8 @@
 package com.example.superheroapi.features.data.remote.api
 
+import com.example.superheroapi.features.domain.SuperHeroe
+import com.example.superheroapi.features.domain.SuperHeroeRepository
+
 
 class SuperHeroesDataRepository(
     private val apiRemoteDataSource: SuperHeroesApiRemoteDataSource

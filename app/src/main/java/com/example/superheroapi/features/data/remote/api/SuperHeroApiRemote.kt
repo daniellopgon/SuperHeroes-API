@@ -1,6 +1,6 @@
 package com.example.superheroapi.features.data.remote.api
 
-import edu.iesam.superheroes.features.domain.ErrorApp
+import com.example.superheroapi.features.domain.ErrorApp
 import java.io.IOException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
