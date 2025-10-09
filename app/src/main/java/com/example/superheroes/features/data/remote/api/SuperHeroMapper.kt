@@ -1,6 +1,6 @@
-package com.example.superheroapi.features.data.remote.api
+package com.example.superheroes.features.data.remote.api
 
-import com.example.superheroapi.features.domain.SuperHeroe
+import com.example.superheroes.features.domain.SuperHeroe
 
 fun SuperHeroApiModel.toModel(): SuperHeroe {
     return SuperHeroe(

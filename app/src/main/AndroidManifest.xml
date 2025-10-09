@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SuperHeroApi">
         <activity
-            android:name=".MainActivity"
+            android:name=".features.presentation.SuperHeroesListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

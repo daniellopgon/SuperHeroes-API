@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.superheroapi"
+    namespace = "com.example.superheroes"
     compileSdk = 36
 
     defaultConfig {
@@ -42,11 +42,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation("com.android.support:appcompat-v7:28.0.0")
+    implementation("com.android.support:recyclerview-v7:28.0.0")
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(kotlin("test"))
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 }

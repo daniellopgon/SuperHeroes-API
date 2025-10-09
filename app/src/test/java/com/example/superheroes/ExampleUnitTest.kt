@@ -1,4 +1,4 @@
-package com.example.superheroapi
+package com.example.superheroes
 
 import org.junit.Test
 

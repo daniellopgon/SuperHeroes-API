@@ -1,4 +1,4 @@
-package com.example.superheroapi.features.domain
+package com.example.superheroes.features.domain
 
 sealed class ErrorApp: Throwable() {
 

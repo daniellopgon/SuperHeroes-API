@@ -1,4 +1,4 @@
-package com.example.superheroapi.features.data.remote.api
+package com.example.superheroes.features.data.remote.api
 
 data class SuperHeroApiModel(
     val id: String,
