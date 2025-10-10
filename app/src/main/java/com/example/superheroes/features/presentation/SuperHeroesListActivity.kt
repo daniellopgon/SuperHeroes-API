@@ -2,6 +2,7 @@ package com.example.superheroes.features.presentation
 
 import SuperHeroesDataRepository
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ class SuperHeroesListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        findViewById<Button>(R.id.btnFilterAll).isSelected = true
 
         setupRecyclerView()
         setupViewModel()
@@ -30,7 +32,7 @@ class SuperHeroesListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView = findViewById<RecyclerView>(R.id.heroRecyclerView)
 
         ViewCompat.setOnApplyWindowInsetsListener(recyclerView) { v, insets ->
             val innerPadding = insets.getInsets(
