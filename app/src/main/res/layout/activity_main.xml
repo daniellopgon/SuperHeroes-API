@@ -23,7 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_normal">
 
                 <ImageView
                     android:layout_width="48dp"
@@ -36,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_small"
                     android:text="@string/header_title"
-                    android:textSize="@dimen/text_size_title"
+                    android:textSize="24sp"
                     android:textColor="@color/electric_gold"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-black" />
@@ -46,7 +47,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/banner_height"
-                android:layout_marginTop="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_normal"
                 app:cardCornerRadius="@dimen/banner_corner_radius"
                 app:cardElevation="0dp">
 
@@ -57,8 +58,8 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_launcher_background"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/banner_heroes"
                         android:contentDescription="@string/banner_image_desc" />
 
                     <View
@@ -92,99 +93,21 @@
                 </FrameLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- SEARCH BAR -->
-            <EditText
-                android:id="@+id/searchInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_normal"
-                android:background="@drawable/search_bar_background"
-                android:hint="@string/search_hint"
-                android:textColorHint="@color/subtle_silver"
-                android:textColor="@color/pure_white"
-                android:paddingVertical="@dimen/search_bar_padding_vertical"
-                android:paddingHorizontal="@dimen/search_bar_padding_horizontal"
-                android:inputType="text" />
-
-            <!-- FILTERS -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_normal"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btnFilterAll"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/filter_all"
-                        android:background="@drawable/filter_button_selector"
-                        android:textColor="@color/pure_white"
-                        android:paddingVertical="@dimen/filter_btn_padding_vertical"
-                        android:paddingHorizontal="@dimen/filter_btn_padding_horizontal"
-
-                        style="?android:attr/borderlessButtonStyle" />
-
-                    <Button
-                        android:id="@+id/btnFilterMarvel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/spacing_small"
-                        android:text="@string/filter_marvel"
-                        android:background="@drawable/filter_button_selector"
-                        android:textColor="@color/pure_white"
-                        android:paddingVertical="@dimen/filter_btn_padding_vertical"
-                        android:paddingHorizontal="@dimen/filter_btn_padding_horizontal"
-                        style="?android:attr/borderlessButtonStyle" />
-
-                    <Button
-                        android:id="@+id/btnFilterDC"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/spacing_small"
-                        android:text="@string/filter_dc"
-                        android:background="@drawable/filter_button_selector"
-                        android:textColor="@color/pure_white"
-                        android:paddingVertical="@dimen/filter_btn_padding_vertical"
-                        android:paddingHorizontal="@dimen/filter_btn_padding_horizontal"
-                        style="?android:attr/borderlessButtonStyle" />
-
-                    <Button
-                        android:id="@+id/btnFilterIndependent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/spacing_small"
-                        android:text="@string/filter_independent"
-                        android:background="@drawable/filter_button_selector"
-                        android:textColor="@color/pure_white"
-                        android:paddingVertical="@dimen/filter_btn_padding_vertical"
-                        android:paddingHorizontal="@dimen/filter_btn_padding_horizontal"
-                        style="?android:attr/borderlessButtonStyle" />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <!-- RESULTS COUNT -->
+            <!-- TÍTULO DE SECCIÓN -->
             <TextView
-                android:id="@+id/resultsCount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_normal"
-                android:text="@string/results_count"
-                android:textSize="@dimen/text_size_small"
-                android:textColor="@color/subtle_silver"
-                android:gravity="center" />
+                android:text="All Heroes"
+                android:textSize="20sp"
+                android:textColor="@color/pure_white"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/spacing_small" />
 
             <!-- HERO GALLERY -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/heroRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_normal" />
+                android:layout_height="wrap_content" />
 
             <!-- NO RESULTS MESSAGE -->
             <LinearLayout

@@ -2,8 +2,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.superheroes.R
 import com.example.superheroes.features.domain.SuperHeroe
 import com.example.superheroes.features.presentation.SuperHeroDetailActivity
@@ -32,6 +34,7 @@ class SuperHeroAdapter : RecyclerView.Adapter<SuperHeroAdapter.SuperHeroeViewHol
     }
 
     inner class SuperHeroeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        private val image: ImageView = view.findViewById(R.id.superHero_image)
         private val name: TextView = view.findViewById(R.id.superHero_name)
         private val slug: TextView = view.findViewById(R.id.superHero_slug)
 
@@ -39,12 +42,18 @@ class SuperHeroAdapter : RecyclerView.Adapter<SuperHeroAdapter.SuperHeroeViewHol
             name.text = heroe.name
             slug.text = heroe.slug
 
+            image.load(heroe.urlImage) {
+                crossfade(true)
+                placeholder(R.drawable.ic_launcher_background)
+                error(R.drawable.ic_launcher_foreground)
+            }
+
             itemView.setOnClickListener {
                 val heroDomain = SuperHeroe(
                     id = heroe.id,
                     name = heroe.name,
                     slug = heroe.slug,
-                    urlImage  = heroe.urlImage
+                    urlImage = heroe.urlImage
                 )
 
                 SuperHeroObserver.setHero(heroDomain)

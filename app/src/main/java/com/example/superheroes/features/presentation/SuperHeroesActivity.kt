@@ -4,7 +4,6 @@ import SuperHeroAdapter
 import SuperHeroesDataRepository
 import SuperHeroesListViewModel
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,6 @@ import com.example.superheroes.R
 import com.example.superheroes.core.api.ApiClient
 import com.example.superheroes.features.data.remote.api.SuperHeroesApiRemoteDataSource
 import com.example.superheroes.features.domain.GetAllSuperHeroesUseCase
-import com.example.superheroes.features.domain.SuperHeroe
 
 class SuperHeroesActivity : AppCompatActivity() {
 
@@ -27,7 +25,6 @@ class SuperHeroesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        findViewById<Button>(R.id.btnFilterAll).isSelected = true
 
         setupRecyclerView()
         setupViewModel()
@@ -47,8 +44,6 @@ class SuperHeroesActivity : AppCompatActivity() {
         }
 
         adapter = SuperHeroAdapter()
-        recyclerView.adapter = adapter
-
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
     }
