@@ -59,12 +59,4 @@ src
 - **ViewModel & LiveData** – For lifecycle-aware UI updates.
 - **Kotlin** – Modern language features for cleaner code.
 
-## How to Run
 
-1. Clone the repository:
-   ```bash
-   git clone <repository_url>
-
-│ │ ├── SuperHeroesListViewModel.kt
-│ │ ├── SuperHeroObserver.kt
-│ │ └── SuperHeroUiModel.kt
