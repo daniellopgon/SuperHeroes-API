@@ -1,6 +1,8 @@
 package com.example.superheroes.features.presentation
 
+import SuperHeroAdapter
 import SuperHeroesDataRepository
+import SuperHeroesListViewModel
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -14,7 +16,7 @@ import com.example.superheroes.core.api.ApiClient
 import com.example.superheroes.features.data.remote.api.SuperHeroesApiRemoteDataSource
 import com.example.superheroes.features.domain.GetAllSuperHeroesUseCase
 
-class SuperHeroesListActivity : AppCompatActivity() {
+class SuperHeroesActivity : AppCompatActivity() {
 
     private lateinit var adapter: SuperHeroAdapter
     private lateinit var viewModel: SuperHeroesListViewModel
@@ -30,19 +32,14 @@ class SuperHeroesListActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        val recyclerView = findViewById<RecyclerView>(R.id.heroRecyclerView)
 
         ViewCompat.setOnApplyWindowInsetsListener(recyclerView) { v, insets ->
             val innerPadding = insets.getInsets(
                 WindowInsetsCompat.Type.systemBars()
                         or WindowInsetsCompat.Type.displayCutout()
             )
-            v.setPadding(
-                innerPadding.left,
-                innerPadding.top,
-                innerPadding.right,
-                innerPadding.bottom
-            )
+            v.setPadding(innerPadding.left, innerPadding.top, innerPadding.right, innerPadding.bottom)
             insets
         }
 
@@ -52,7 +49,6 @@ class SuperHeroesListActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-
         val apiClient = ApiClient()
         val remoteDataSource = SuperHeroesApiRemoteDataSource(apiClient)
         val repository = SuperHeroesDataRepository(remoteDataSource)
@@ -68,7 +64,7 @@ class SuperHeroesListActivity : AppCompatActivity() {
 
         viewModel.error.observe(this) { error ->
             error?.let {
-                val message = when(it) {
+                val message = when (it) {
                     is com.example.superheroes.features.domain.ErrorApp.InternetConexionError ->
                         "Sin conexión a Internet"
                     is com.example.superheroes.features.domain.ErrorApp.ServerErrorApp ->
