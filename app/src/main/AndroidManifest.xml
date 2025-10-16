@@ -26,7 +26,7 @@
         <activity
             android:name=".features.presentation.SuperHeroDetailActivity"
             android:exported="false"
-            android:parentActivityName=".features.presentation.SuperHeroesActivity">
+            android:parentActivityName=".features.presentation.SuperHeroDetailActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".features.presentation.SuperHeroesActivity" />

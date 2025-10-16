@@ -7,9 +7,9 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import coil.load
 import com.example.superheroes.R
 import com.example.superheroes.features.domain.SuperHeroe
+import coil.load
 
 class SuperHeroDetailActivity : AppCompatActivity() {
 

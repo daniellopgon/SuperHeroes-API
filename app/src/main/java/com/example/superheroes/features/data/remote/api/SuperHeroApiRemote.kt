@@ -1,6 +1,6 @@
 package com.example.superheroes.features.data.remote.api
 
-import com.example.superheroes.core.api.ApiClient
+import com.example.superheroes.features.data.core.api.ApiClient
 import com.example.superheroes.features.domain.ErrorApp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

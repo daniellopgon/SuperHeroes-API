@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.example.superheroes.R
 import com.example.superheroes.features.domain.SuperHeroe
 import com.example.superheroes.features.presentation.SuperHeroDetailActivity
 import com.example.superheroes.features.presentation.SuperHeroObserver
 import com.example.superheroes.features.presentation.SuperHeroeUiModel
+import coil.load
 
 class SuperHeroAdapter : RecyclerView.Adapter<SuperHeroAdapter.SuperHeroeViewHolder>() {
 

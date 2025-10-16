@@ -1,4 +1,4 @@
-package com.example.superheroes.core.api
+package com.example.superheroes.features.data.core.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

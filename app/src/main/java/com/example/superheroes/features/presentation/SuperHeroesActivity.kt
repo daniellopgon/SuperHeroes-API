@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.superheroes.R
-import com.example.superheroes.core.api.ApiClient
+import com.example.superheroes.features.data.core.api.ApiClient
 import com.example.superheroes.features.data.remote.api.SuperHeroesApiRemoteDataSource
 import com.example.superheroes.features.domain.GetAllSuperHeroesUseCase
 
